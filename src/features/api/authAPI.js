@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import authSlice from "../authSlice"
 
 const baseQuery = fetchBaseQuery({
   baseUrl: import.meta.process.env.VITE_SERVER_BASE_URL,
@@ -18,7 +19,7 @@ const baseQueryWithReafreshToken = async (args, api, extraOptions) => {
 
   if (result?.error?.status === 401) {
     const refreshResult = await baseQuery(
-      { url: "/auth/refresh", method: "POST" },
+      { url: "/auth/refresh-token", method: "POST" },
       api,
       extraOptions
     );

@@ -33,7 +33,6 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
-      // "disable-eslint-ignore": true,
     },
   },
 ]
